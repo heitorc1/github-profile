@@ -6,7 +6,7 @@ const UserSearch: React.FC = () => {
   const [user, setUser] = useState("");
 
   return (
-    <>
+    <Wrapper>
       <LabelField htmlFor="userSearch">Username</LabelField>
       <InputField
         type="text"
@@ -16,18 +16,31 @@ const UserSearch: React.FC = () => {
         onChange={(event) => setUser(event.target.value)}
       />
       <UserSearchButton user={user} />
-    </>
+    </Wrapper>
   );
 };
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
 const LabelField = styled.label`
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 10px 20px;
+
+  font-size: 25px;
+  font-weight: 700;
 `;
 
 const InputField = styled.input`
   margin: 10px;
   padding: 10px;
+
+  background-color: #94d2bd;
+  border-radius: 5px;
+  border: 1px groove #0a9396;
 `;
 
 export default UserSearch;
