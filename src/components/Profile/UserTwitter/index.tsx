@@ -15,7 +15,7 @@ const UserTwitter: React.FC<UserTwitterType> = ({ twitter_username }) => {
           {twitter_username}
         </Link>
       ) : (
-        "Twitter not found"
+        ""
       )}
     </Text>
   );
@@ -27,7 +27,7 @@ const Text = styled.h2`
 `;
 
 const Link = styled.a`
-  color: #000;
+  color: #001219;
   text-decoration: none;
 `;
 

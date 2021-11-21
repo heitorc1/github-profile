@@ -8,7 +8,7 @@ type UserSearchButtonProps = {
 };
 
 const UserSearchButton: React.FC<UserSearchButtonProps> = ({ user }) => {
-  const { state, setState } = useContext(UserContext);
+  const { setState } = useContext(UserContext);
 
   async function searchUser() {
     const response = await getUser(user);

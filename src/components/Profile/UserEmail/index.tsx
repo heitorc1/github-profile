@@ -6,13 +6,13 @@ type NameType = {
 };
 
 const UserEmail: React.FC<NameType> = ({ email }) => {
-  return (
-    <UserEmailStyle>
-      <h2>{!!email ? email : "Email not found"}</h2>
-    </UserEmailStyle>
-  );
+  return <UserEmailStyle>{!!email ? <Text>{email}</Text> : ""}</UserEmailStyle>;
 };
 
 const UserEmailStyle = styled.div``;
+
+const Text = styled.p`
+  font-size: 15px;
+`;
 
 export default UserEmail;

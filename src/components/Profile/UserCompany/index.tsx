@@ -8,11 +8,31 @@ type NameType = {
 const UserCompany: React.FC<NameType> = ({ company }) => {
   return (
     <UserCompanyStyle>
-      <h2>{!!company ? company : "Company not found"}</h2>
+      {!!company ? (
+        <>
+          <Icon className="fas fa-building fa-lg" />
+          <Text>{company}</Text>
+        </>
+      ) : (
+        ""
+      )}
     </UserCompanyStyle>
   );
 };
 
-const UserCompanyStyle = styled.div``;
+const UserCompanyStyle = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Icon = styled.i`
+  margin-right: 5px;
+`;
+
+const Text = styled.p`
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 5px;
+`;
 
 export default UserCompany;

@@ -8,11 +8,24 @@ type UserBioType = {
 const UserBio: React.FC<UserBioType> = ({ bio }) => {
   return (
     <UserBioStyle>
-      <h2>{!!bio ? bio : "Bio not found"}</h2>
+      <Text>{!!bio ? bio : "Bio not found"}</Text>
     </UserBioStyle>
   );
 };
 
-const UserBioStyle = styled.div``;
+const UserBioStyle = styled.div`
+  padding: 10px 40px;
+
+  border-radius: 5px;
+  background-color: #ee9b0070;
+
+  max-width: 850px;
+`;
+
+const Text = styled.p`
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+`;
 
 export default UserBio;

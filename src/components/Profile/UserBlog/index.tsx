@@ -8,11 +8,20 @@ type UserBlogType = {
 const UserBlog: React.FC<UserBlogType> = ({ blog }) => {
   return (
     <UserBlogStyle>
-      <h2>{!!blog ? blog : "Blog not found"}</h2>
+      {!!blog ? <Link href={blog}>{blog}</Link> : ""}
     </UserBlogStyle>
   );
 };
 
-const UserBlogStyle = styled.div``;
+const UserBlogStyle = styled.div`
+  margin-top: 20px;
+`;
+
+const Link = styled.a`
+  font-size: 20px;
+  font-weight: 500;
+  color: #001219;
+  text-decoration: none;
+`;
 
 export default UserBlog;

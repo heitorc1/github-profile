@@ -38,7 +38,7 @@ const InputField = styled.input`
   margin: 10px;
   padding: 10px;
 
-  background-color: #94d2bd;
+  background-color: #e9d8a6;
   border-radius: 5px;
   border: 1px groove #0a9396;
 `;

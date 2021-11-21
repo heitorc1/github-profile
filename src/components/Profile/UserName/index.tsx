@@ -13,8 +13,10 @@ const UserName: React.FC<NameType> = ({ name }) => {
   );
 };
 
-const UserNameStyle = styled.h2`
+const UserNameStyle = styled.p`
   font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 0;
 `;
 
 export default UserName;

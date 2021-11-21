@@ -10,6 +10,7 @@ type UserType = {
   avatar_url: string;
   html_url: string;
   followers_url: string;
+  following_url: string;
   starred_url: string;
   subscription_url: string;
   organizations_url: string;
@@ -22,6 +23,8 @@ type UserType = {
   hireable: boolean;
   bio: string;
   twitter_username: string;
+  followers: number;
+  following: number;
 };
 
 type PropsUserContext = {
@@ -35,6 +38,7 @@ const DEFAULT_VALUE = {
     avatar_url: "",
     html_url: "",
     followers_url: "",
+    following_url: "",
     starred_url: "",
     subscription_url: "",
     organizations_url: "",
@@ -47,6 +51,8 @@ const DEFAULT_VALUE = {
     hireable: false,
     bio: "",
     twitter_username: "",
+    followers: 0,
+    following: 0,
   },
   setState: () => {},
 };
