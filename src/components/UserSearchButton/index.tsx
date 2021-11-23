@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import UserContext from "../../context/user";
 import styled from "styled-components";
 import getUser from "../../services/userService";
+import theme from "../../assets/theme";
+import Typography from "@mui/material/Typography";
 
 type UserSearchButtonProps = {
   user: string;
@@ -17,7 +19,11 @@ const UserSearchButton: React.FC<UserSearchButtonProps> = ({ user }) => {
 
   return (
     <>
-      <SearchButton onClick={searchUser}>Search user</SearchButton>
+      <SearchButton onClick={searchUser}>
+        <Typography variant="button" px={2}>
+          Search
+        </Typography>
+      </SearchButton>
     </>
   );
 };
@@ -28,9 +34,9 @@ const SearchButton = styled.button`
 
   font-size: 18px;
 
-  color: #001219;
-  background-color: #ca6702;
-  border: 1px solid #884502;
+  color: ${theme.colors.primary.contrastText};
+  background-color: ${theme.colors.secondary.dark};
+  border: 1px solid ${theme.colors.primary.dark};
   border-radius: 5px;
 
   &:active {

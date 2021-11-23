@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Typography from "@mui/material/Typography";
 
 type UserFollowersType = {
   followers: number;
@@ -18,12 +19,12 @@ const UserFollowers: React.FC<UserFollowersType> = ({
     <UserFollowersStyle>
       {!!(followers | following) ? (
         <>
-          <Text>
+          <Typography variant="subtitle1">
             <Link href={followers_url}>{followers} Followers</Link>
-          </Text>
-          <Text>
+          </Typography>
+          <Typography variant="subtitle1">
             <Link href={following_url}>{following} Following</Link>
-          </Text>
+          </Typography>
         </>
       ) : (
         ""
@@ -38,16 +39,7 @@ const UserFollowersStyle = styled.div`
   align-items: flex-start;
 `;
 
-const Text = styled.p`
-  font-size: 15px;
-  font-weight: 500;
-
-  margin: 0;
-  padding: 0;
-`;
-
 const Link = styled.a`
-  font-size: 18px;
   text-decoration: none;
   color: inherit;
 `;

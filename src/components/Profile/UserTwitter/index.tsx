@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import Typography from "@mui/material/Typography";
+import Twitter from "@material-ui/icons/Twitter";
+import theme from "../../../assets/theme";
 
 type UserTwitterType = {
   twitter_username: string;
@@ -8,30 +11,34 @@ type UserTwitterType = {
 const UserTwitter: React.FC<UserTwitterType> = ({ twitter_username }) => {
   const url = "https://twitter.com/" + twitter_username;
   return (
-    <Text>
+    <>
       {!!twitter_username ? (
-        <Link href={url}>
-          <Icon className="fab fa-twitter"></Icon>
-          {twitter_username}
-        </Link>
+        <Line>
+          <Typography variant="h6">
+            <Link href={url}>
+              <Icon />
+              {twitter_username}
+            </Link>
+          </Typography>
+        </Line>
       ) : (
         ""
       )}
-    </Text>
+    </>
   );
 };
 
-const Text = styled.h2`
-  font-size: 20px;
-  font-weight: 700;
+const Line = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const Link = styled.a`
-  color: #001219;
+  color: ${theme.colors.primary.text};
   text-decoration: none;
 `;
 
-const Icon = styled.i`
+const Icon = styled(Twitter)`
   margin-right: 5px;
 `;
 

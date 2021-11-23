@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import UserSearchButton from "../UserSearchButton";
+import Typography from "@mui/material/Typography";
+import theme from "../../assets/theme";
 
 const UserSearch: React.FC = () => {
   const [user, setUser] = useState("");
 
   return (
     <Wrapper>
-      <LabelField htmlFor="userSearch">Username</LabelField>
+      <Typography variant="h4">Username</Typography>
       <InputField
         type="text"
         name="inputUser"
@@ -27,20 +29,13 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const LabelField = styled.label`
-  margin: 10px 20px;
-
-  font-size: 25px;
-  font-weight: 700;
-`;
-
 const InputField = styled.input`
   margin: 10px;
   padding: 10px;
 
-  background-color: #e9d8a6;
+  background-color: ${theme.colors.secondary.light};
   border-radius: 5px;
-  border: 1px groove #0a9396;
+  border: 1px groove ${theme.colors.secondary.dark};
 `;
 
 export default UserSearch;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import Avatar from "@mui/material/Avatar";
 
 type AvatarType = {
   avatar: string;
@@ -7,16 +7,13 @@ type AvatarType = {
 const ProfileImage: React.FC<AvatarType> = ({ avatar }) => {
   return (
     <>
-      <Image src={avatar} alt="Profile Image" />
+      <Avatar
+        src={avatar}
+        alt="Profile Image"
+        sx={{ width: 150, height: 150 }}
+      />
     </>
   );
 };
-
-const Image = styled.img`
-  width: 128px;
-  border-radius: 64px;
-  border: 3px solid #5e5d5d;
-  margin-top: 20px;
-`;
 
 export default ProfileImage;

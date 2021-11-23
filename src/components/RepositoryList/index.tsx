@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Typography from "@mui/material/Typography";
+import Star from "@material-ui/icons/Star";
 import styled from "styled-components";
+import theme from "../../assets/theme";
 
 type RepositoryListType = {
   login: string;
@@ -29,12 +32,20 @@ const RepositoryList: React.FC<RepositoryListType> = ({ login }) => {
         <>
           {repos.map((value) => (
             <UserRepository key={value.id}>
-              <Name>{value.name}</Name>
-              <Description>{value.description}</Description>
+              <Name variant="h6" m={1}>
+                {value.name}
+              </Name>
+              <Name variant="body1" mx={1} mt={3}>
+                {value.description}
+              </Name>
               <Line>
-                <Number>{value.stargazers_count}</Number>
-                <Icon className="fas fa-star" />
-                <Language>{value.language}</Language>
+                <Name mx={1} mt={5}>
+                  {value.stargazers_count}
+                </Name>
+                <Icon color="primary" />
+                <Name mx={1} mt={5}>
+                  {value.language}
+                </Name>
               </Line>
             </UserRepository>
           ))}
@@ -51,7 +62,6 @@ const RepositoryListStyle = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  flex-grow: 1;
 `;
 
 const UserRepository = styled.div`
@@ -59,42 +69,29 @@ const UserRepository = styled.div`
   margin: 10px;
 
   border-radius: 5px;
-  background-color: #ee9b0070;
+  background-color: ${theme.colors.primary.dark};
 
   display: flex;
   flex-direction: column;
-  min-width: 370px;
-  min-height: 180px;
+  width: 370px;
+  min-height: 200px;
 
   font-size: 20px;
 `;
 
-const Name = styled.p`
-  font-weight: 500;
-`;
-
-const Description = styled.p`
-  font-size: 16px;
-
-  margin-top: 0;
+const Name = styled(Typography)`
+  color: ${theme.colors.primary.contrastText};
 `;
 
 const Line = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+
+  margin-bottom: 5px;
 `;
 
-const Language = styled.p`
-  font-size: 14px;
-`;
-
-const Number = styled.p`
-  margin-right: 5px;
-`;
-
-const Icon = styled.i`
-  font-size: 15px;
-  margin-right: 20px;
+const Icon = styled(Star)`
+  margin-top: 35px;
 `;
 
 export default RepositoryList;

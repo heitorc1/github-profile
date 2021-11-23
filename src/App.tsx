@@ -5,6 +5,7 @@ import Profile from "./pages/Profile";
 
 import "./App.css";
 import GlobalContext from "./context";
+import theme from "./assets/theme";
 
 const App: React.FC = () => {
   return (
@@ -17,7 +18,10 @@ const App: React.FC = () => {
 };
 
 const Container = styled.div`
-  height: 100vh;
+  background-color: ${theme.colors.secondary.light};
+  color: ${theme.colors.primary.text};
+
+  min-height: 100vh;
 `;
 
 export default App;

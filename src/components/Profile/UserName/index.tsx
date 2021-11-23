@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import Typography from "@mui/material/Typography";
 
 type NameType = {
   name: string;
@@ -8,15 +8,15 @@ type NameType = {
 const UserName: React.FC<NameType> = ({ name }) => {
   return (
     <>
-      <UserNameStyle>{!!name ? name : "Username not found"}</UserNameStyle>
+      {!!name ? (
+        <Typography variant="h3" mt={2}>
+          {name}
+        </Typography>
+      ) : (
+        "Username not found"
+      )}
     </>
   );
 };
-
-const UserNameStyle = styled.p`
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 0;
-`;
 
 export default UserName;

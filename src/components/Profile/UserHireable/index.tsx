@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import Typography from "@mui/material/Typography";
 
 type UserHireableType = {
   hireable: boolean;
@@ -7,20 +7,20 @@ type UserHireableType = {
 
 const UserHireable: React.FC<UserHireableType> = ({ hireable }) => {
   return (
-    <UserHireableStyle>
+    <>
       <h2>
         {!!hireable ? (
           <>
-            <p>Is hireable? {hireable}</p>
+            <Typography variant="h6" ml={1}>
+              Is hireable? {hireable}
+            </Typography>
           </>
         ) : (
           ""
         )}
       </h2>
-    </UserHireableStyle>
+    </>
   );
 };
-
-const UserHireableStyle = styled.div``;
 
 export default UserHireable;

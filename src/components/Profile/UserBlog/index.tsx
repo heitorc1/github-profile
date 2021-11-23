@@ -1,5 +1,8 @@
 import React from "react";
+import Typography from "@mui/material/Typography";
+
 import styled from "styled-components";
+import theme from "../../../assets/theme";
 
 type UserBlogType = {
   blog: string;
@@ -8,7 +11,13 @@ type UserBlogType = {
 const UserBlog: React.FC<UserBlogType> = ({ blog }) => {
   return (
     <UserBlogStyle>
-      {!!blog ? <Link href={blog}>{blog}</Link> : ""}
+      {!!blog ? (
+        <Link href={blog}>
+          <Typography variant="h6">{blog}</Typography>
+        </Link>
+      ) : (
+        ""
+      )}
     </UserBlogStyle>
   );
 };
@@ -18,9 +27,7 @@ const UserBlogStyle = styled.div`
 `;
 
 const Link = styled.a`
-  font-size: 20px;
-  font-weight: 500;
-  color: #001219;
+  color: ${theme.colors.primary.text};
   text-decoration: none;
 `;
 
